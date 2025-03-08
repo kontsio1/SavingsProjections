@@ -5,6 +5,7 @@ import matplotlib.dates as mdates
 import datetime
 
 projection = 12*3 #months
+default_monthly_deposit = 500
 
 def makeLineplot(line1=None, line2=None, line3=None, line4=None, line5=None):
     global fig, axes  
@@ -29,7 +30,7 @@ def getNatWest(projectionLength):
     slumpDeposit = 0 #Initial investement
     aer = 6 #% Annual Equivalent Rate - Compounded Interest
     aerAfter5k = 1.49
-    monthlyDeposit = 150
+    monthlyDeposit = default_monthly_deposit or 150
     balance = [0]
     interestEarned = [0]
 
@@ -51,7 +52,7 @@ def getChase(projectionLength):
     slumpDeposit = 1000 #Initial investement
     boostedAer = 4.5 #% Annual Equivalent Rate - Compounded Interest
     aer = 3
-    monthlyDeposit = 150
+    monthlyDeposit = default_monthly_deposit or 150
 
     balance = [slumpDeposit]
     interestEarned = [0]
@@ -72,7 +73,7 @@ def getChase(projectionLength):
 def getBarclays(projectionLength):
     slumpDeposit = 1000 #Initial investement
     aer = 4.05 #% Annual Equivalent Rate - Compounded Interest
-    monthlyDeposit = 150
+    monthlyDeposit = default_monthly_deposit or 150
 
     balance = [slumpDeposit]
     interestEarned = [0]
@@ -93,7 +94,7 @@ def getBarclays(projectionLength):
 def getSP500(projectionLength):
     slumpDeposit = 1000 #Initial investement
     aer = 6.37 #% Annual Equivalent Rate - Compounded Interest
-    monthlyDeposit = 150
+    monthlyDeposit = default_monthly_deposit or 150
 
     balance = [slumpDeposit]
     interestEarned = [0]
